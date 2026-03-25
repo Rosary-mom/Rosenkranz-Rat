@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🌹 Bio3.0 – Erfolgreicher Abschluss</title>
+    <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"></script>
+    <style>
+        :root { --gold: #ffd700; --navy: #0a0a2a; --deepblue: #1a1a4a; }
+        body { font-family: system-ui, sans-serif; background: linear-gradient(#0a0a2a, #1a1a4a); color: #fff; margin: 0; padding: 20px; }
+        .container { max-width: 1300px; margin: auto; }
+        h1 { text-align: center; color: var(--gold); text-shadow: 0 0 20px var(--gold); }
+        canvas { border: 4px solid var(--gold); border-radius: 20px; box-shadow: 0 0 30px var(--gold); display: block; margin: 20px auto; }
+        .btn { background: var(--gold); color: #0a0a2a; padding: 15px 30px; border: none; border-radius: 12px; cursor: pointer; font-weight: bold; margin: 20px auto; display: block; }
+        .terminal { max-width: 900px; margin: 30px auto; border: 2px solid #333; padding: 20px; background: #050505; box-shadow: 0 0 20px rgba(0,255,0,0.1); }
+        .input-binary { width: 100%; padding: 15px; font-size: 1.4em; background: #111; color: var(--gold); border: 3px solid var(--gold); text-align: center; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <h1>🌹 Bio3.0 – Erfolgreicher Abschluss</h1>
+
+    <!-- Fraktale Resilienz-Simulation -->
+    <h2 style="color:var(--gold);text-align:center;">📈 Fraktale Resilienz-Simulation (Korrelation ~>1)</h2>
+    <label>Harmonische Zyklen: <span id="cycles-val">5</span></label>
+    <input type="range" id="cycles" min="1" max="30" value="5" style="width:100%;">
+    <canvas id="resilienceCanvas" width="1100" height="320"></canvas>
+    <p id="resilienceResult" style="text-align:center;font-size:1.5em;color:var(--gold);"></p>
+
+    <!-- Dehydrogenase + a-posteriori Kurven -->
+    <h2 style="color:var(--gold);text-align:center;margin-top:40px;">📊 Dehydrogenase + a-posteriori Kurven (live)</h2>
+    <canvas id="dehydroCanvas" width="1100" height="300"></canvas>
+
+    <!-- 2D Hügelbeet mit wandernder Sonne -->
+    <h2 style="color:var(--gold);text-align:center;margin-top:40px;">🌿 2D Hügelbeet mit Teich + wandernde Sonne (Sentinel-Style)</h2>
+    <canvas id="hugelCanvas" width="1100" height="400"></canvas>
+
+    <!-- Three.js 3D-Rosarium -->
+    <h2 style="color:var(--gold);text-align:center;margin-top:40px;">🌀 Three.js 3D-Rosarium (rotierend mit Sonne)</h2>
+    <div id="threeContainer" style="width:100%;height:500px;border:4px solid var(--gold);border-radius:20px;"></div>
+
+    <!-- Sentinel Terminal -->
+    <div class="terminal">
+        <div style="border-bottom:1px solid #0f0;padding-bottom:10px;margin-bottom:20px;display:flex;justify-content:space-between;">
+            <span>SYSTEM: SENTINEL_GROK_MODE_V.9</span><span style="color:#0f0" class="blink">● ONLINE</span>
+        </div>
+        <input id="binaryInput" class="input-binary" type="text" maxlength="6" placeholder="Binary-Code (000000–111111)" onkeypress="if(event.key==='Enter') runSentinel()">
+        <button onclick="runSentinel()" class="btn" style="width:100%;margin-top:10px;">SCAN STARTEN</button>
+        <div id="sentinelResult" style="margin-top:20px;min-height:180px;"></div>
+    </div>
+
+    <footer style="text-align:center;margin-top:80px;opacity:0.85;">ArchBishop Dr. Uwe A.E. Rosenkranz, 24. März 2026</footer>
+</div>
+
+<script>
+    // Resilienz-Kurve
+    const rCanvas = document.getElementById('resilienceCanvas');
+    const rCtx = rCanvas.getContext('2d');
+    const slider = document.getElementById('cycles');
+    const valDisplay = document.getElementById('cycles-val');
+    const resultEl = document.getElementById('resilienceResult');
+    function drawResilience(cycles) {
+        rCtx.clearRect(0, 0, rCanvas.width, rCanvas.height);
+        rCtx.strokeStyle = '#ffd700';
+        rCtx.lineWidth = 8;
+        rCtx.beginPath();
+        rCtx.moveTo(50, 280);
+        for (let i = 1; i <= cycles; i++) {
+            const x = 50 + (i * 1000 / cycles);
+            const y = 280 - (200 * (1 - Math.pow(0.92, i)));
+            rCtx.lineTo(x, y);
+        }
+        rCtx.stroke();
+        const res = (1 - Math.pow(0.92, cycles)).toFixed(3);
+        resultEl.textContent = `Resilienz = ${res} → maximal stabil (Korrelation ~>1)`;
+        valDisplay.textContent = cycles;
+    }
+    slider.addEventListener('input', () => drawResilience(parseInt(slider.value)));
+    drawResilience(5);
+
+    // Dehydrogenase-Kurven
+    const deCanvas = document.getElementById('dehydroCanvas');
+    const deCtx = deCanvas.getContext('2d');
+    function drawDehydro() {
+        deCtx.clearRect(0, 0, deCanvas.width, deCanvas.height);
+        const colors = ['#ffd700', '#00f3ff', '#39ff14', '#ff3333'];
+        const labels = ['Fläche', 'O₂', 'Temp-Puffer', 'C/N'];
+        for (let i = 0; i < 4; i++) {
+            deCtx.strokeStyle = colors[i];
+            deCtx.lineWidth = 4;
+            deCtx.beginPath();
+            deCtx.moveTo(50, 250);
+            for (let x = 50; x < 1050; x += 20) {
+                const y = 250 - (180 * Math.sin(x / 200 + i)) * (0.8 + i*0.05);
+                deCtx.lineTo(x, y);
+            }
+            deCtx.stroke();
+            deCtx.fillStyle = colors[i];
+            deCtx.fillText(labels[i], 60 + i*200, 40);
+        }
+    }
+    drawDehydro();
+
+    // 2D Hügelbeet mit wandernder Sonne
+    const hugelCanvas = document.getElementById('hugelCanvas');
+    const hCtx = hugelCanvas.getContext('2d');
+    let sunAngle = 0;
+    function drawHugelWithSun() {
+        hCtx.clearRect(0, 0, hugelCanvas.width, hugelCanvas.height);
+        hCtx.fillStyle = '#3a2';
+        hCtx.beginPath();
+        hCtx.ellipse(550, 280, 300, 80, 0, 0, Math.PI*2);
+        hCtx.fill();
+        hCtx.fillStyle = '#1a7';
+        hCtx.beginPath();
+        hCtx.ellipse(550, 320, 120, 60, 0, 0, Math.PI*2);
+        hCtx.fill();
+        sunAngle += 0.02;
+        const sunX = 200 + Math.cos(sunAngle) * 700;
+        const sunY = 80 + Math.sin(sunAngle) * 40;
+        hCtx.fillStyle = '#ffdd88';
+        hCtx.beginPath();
+        hCtx.arc(sunX, sunY, 30, 0, Math.PI*2);
+        hCtx.fill();
+        hCtx.fillStyle = '#ffd700';
+        hCtx.font = 'bold 18px sans-serif';
+        hCtx.fillText('Süden ↑ Morgensonne (111111)', sunX + 40, sunY);
+    }
+    setInterval(drawHugelWithSun, 80);
+
+    // Three.js 3D-Rosarium
+    let scene, camera, renderer;
+    function initThree3D() {
+        const container = document.getElementById('threeContainer');
+        scene = new THREE.Scene();
+        camera = new THREE.PerspectiveCamera(60, container.clientWidth / container.clientHeight, 0.1, 1000);
+        renderer = new THREE.WebGLRenderer({ antialias: true });
+        renderer.setSize(container.clientWidth, container.clientHeight);
+        container.appendChild(renderer.domElement);
+        const pond = new THREE.Mesh(new THREE.PlaneGeometry(4, 3), new THREE.MeshPhongMaterial({color:0x1a7, side:THREE.DoubleSide}));
+        pond.rotation.x = -Math.PI/2; pond.position.y = -1; scene.add(pond);
+        for (let i = 0; i < 64; i++) {
+            const angle = i * 2 * Math.PI / 64;
+            const hill = new THREE.Mesh(new THREE.ConeGeometry(0.15, 0.6, 8), new THREE.MeshPhongMaterial({color:0x3a2}));
+            hill.position.set(Math.cos(angle)*2.8, 0.3, Math.sin(angle)*2.8);
+            scene.add(hill);
+        }
+        const light = new THREE.DirectionalLight(0xffdd88, 1.8); light.position.set(5,10,5); scene.add(light);
+        camera.position.set(0, 3, 6);
+        function animate() { requestAnimationFrame(animate); scene.rotation.y += 0.003; renderer.render(scene, camera); }
+        animate();
+    }
+    initThree3D();
+
+    // Sentinel Terminal
+    function runSentinel() {
+        const input = document.getElementById('binaryInput').value.trim();
+        const resultDiv = document.getElementById('sentinelResult');
+        if (input === "111111") {
+            resultDiv.innerHTML = `<span style="font-size:4rem;">☰</span><h3>HEXAGRAMM 1: QIAN</h3><p>Das Schöpferische – Energy-Harvesting + C4-Pflanzen</p>`;
+        } else if (input === "000000") {
+            resultDiv.innerHTML = `<span style="font-size:4rem;">☷</span><h3>HEXAGRAMM 2: KUN</h3><p>Das Empfangende – Wasserpuffer + Mykorrhiza</p>`;
+        } else {
+            resultDiv.innerHTML = `<p style="color:#ff3333;">Unbekannter Code – versuche 111111 oder 000000</p>`;
+        }
+    }
+</script>
+</body>
+</html>
