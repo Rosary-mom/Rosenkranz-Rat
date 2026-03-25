@@ -11,26 +11,59 @@
     .card { background:#112233; border:3px solid #ffd700; border-radius:16px; padding:40px; margin:30px auto; max-width:700px; }
     .button { display:inline-block; margin:30px 10px; background:#ffd700; color:#000; padding:25px 60px; font-weight:bold; font-size:1.6em; border-radius:12px; text-decoration:none; box-shadow:0 0 30px rgba(255,215,0,0.8); }
     .button:hover { background:#ffed9e; transform:scale(1.05); }
+    .countdown { font-size:2.4em; font-weight:bold; color:#ffd700; letter-spacing:6px; margin:20px 0; }
   </style>
 </head>
 <body>
   <div class="container">
-    <h1>🚀 ESG-Spiral-Tokens Launch</h1>
-    <p style="font-size:1.4em;color:#ffd700;">Rosary©®™ TechEd for StartUp • Goldenes Zeitalter Token</p>
+    <h1>🚀 Rosary©®™ ESG-Spiral-Tokens Launch</h1>
+    <p style="font-size:1.4em;color:#ffd700;">Dehydrogenase + 30.000-fache Effizienz als erster asset-backed Token des Goldenen Zeitalters</p>
 
     <div class="card">
-      <h2>Dehydrogenase + 30.000-fache Effizienz</h2>
-      <p>Der erste asset-backed Token, der fraktale Resilienz und spiralförmige Zeit on-chain abbildet.</p>
-      <p style="font-size:1.1em;">Tx-Hash des ersten Spiral-Triggers:<br><strong>0x29df4931e6562d3c6153545754a5368d5378488c121ac6e793ee1fde1a725560</strong></p>
-      <a href="https://sepolia.etherscan.io/address/0xd9145CCE52D386f254917e481eB44e9943F39138" target="_blank" class="button">
-        Contract auf Sepolia ansehen
-      </a>
-      <a href="#" class="button" style="background:#00ff9d;color:#000;">Token Claim &amp; Launch vorbereiten</a>
+      <h2>Countdown bis Launch</h2>
+      <div id="countdown" class="countdown">00 : 00 : 00 : 00</div>
     </div>
+
+    <div class="card">
+      <h2>Blockchain Details</h2>
+      <p><strong>Netzwerk:</strong> Ethereum Sepolia Testnet<br>
+      <strong>Contract:</strong> EnergySpiralGovernor<br>
+      <strong>Adresse:</strong> 0xd9145CCE52D386f254917e481eB44e9943F39138<br>
+      <strong>Erster Spiral-Trigger Tx-Hash:</strong><br>
+      0x29df4931e6562d3c6153545754a5368d5378488c121ac6e793ee1fde1a725560</p>
+    </div>
+
+    <div class="card">
+      <h2>Warum ESG-Spiral-Tokens?</h2>
+      <p>30.000-fache Effizienz durch fraktale 3D-Hügelbeete + Mykorrhiza-Netzwerke + EPS-Gallert-Matrix.<br>
+      Zero-Emission durch thermodynamische Balance.<br>
+      Asset-backed durch reale Dehydrogenase-Messwerte.<br>
+      Spiralförmige Zeit als mathematisches Abbild der göttlichen Ökonomie.</p>
+    </div>
+
+    <a href="#" class="button" style="background:#00ff9d;color:#000;">
+      Early-Bird Claim &amp; Token Launch vorbereiten
+    </a>
 
     <p style="margin-top:40px;color:#ffd700;">
       Rosary©®™ TechEd for StartUp – Dehydrogenase als Biomarker des Goldenen Zeitalters
     </p>
   </div>
+
+  <script>
+    const launchDate = new Date("2026-03-26T12:00:00+01:00").getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("countdown").innerHTML = `${days}d ${hours.toString().padStart(2,'0')}h ${minutes.toString().padStart(2,'0')}m ${seconds.toString().padStart(2,'0')}s`;
+      if (distance < 0) document.getElementById("countdown").innerHTML = "🚀 LAUNCH JETZT!";
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
 </body>
 </html>
