@@ -5,62 +5,50 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Rosary©®™ ESG-Spiral-Tokens Launch</title>
   <style>
-    body { font-family: system-ui; background:#0a1625; color:#f0f0f0; margin:0; padding:40px; line-height:1.6; text-align:center; }
+    body { font-family: system-ui; background:#0a1625; color:#f0f0f0; margin:0; padding:20px; line-height:1.6; text-align:center; }
     .container { max-width:1100px; margin:auto; }
-    h1 { color:#ffd700; font-size:2.8em; }
-    .subtitle { color:#aaa; font-size:1.3em; margin-bottom:30px; }
-    .card { background:#112233; border:3px solid #ffd700; border-radius:16px; padding:40px; margin:30px auto; max-width:1000px; }
-    .button { display:inline-block; margin:30px 10px; background:#ffd700; color:#000; padding:25px 60px; font-weight:bold; font-size:1.6em; border-radius:12px; text-decoration:none; box-shadow:0 0 30px rgba(255,215,0,0.8); transition:all 0.3s; }
+    h1 { color:#ffd700; font-size:2.6em; }
+    .widget { background:#112233; border:3px solid #ffd700; border-radius:16px; padding:25px; margin:20px auto; max-width:800px; }
+    .countdown { font-size:2.4em; font-weight:bold; color:#ffd700; letter-spacing:6px; }
+    .button { display:inline-block; margin:20px 10px; background:#ffd700; color:#000; padding:20px 50px; font-weight:bold; font-size:1.5em; border-radius:12px; text-decoration:none; box-shadow:0 0 25px rgba(255,215,0,0.8); }
     .button:hover { background:#ffed9e; transform:scale(1.05); }
-    .countdown { font-size:2.6em; font-weight:bold; color:#ffd700; letter-spacing:8px; margin:20px 0; }
-    img { width:100%; border:2px solid #ffd700; border-radius:12px; margin:15px 0; }
+    .status { font-size:1.3em; font-weight:bold; padding:10px 20px; border-radius:8px; display:inline-block; }
+    .golden { background:#00ff9d; color:#000; }
+    .redundanz { background:#ffaa00; color:#000; }
+    iframe { width:100%; height:420px; border:2px solid #ffd700; border-radius:12px; }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>🚀 Rosary©®™ ESG-Spiral-Tokens Launch</h1>
-    <p class="subtitle">Dehydrogenase + 30.000-fache Effizienz • Fraktale Governance als direkter Entscheidungstrigger</p>
+    <p style="font-size:1.3em;color:#ffd700;">Dehydrogenase + 30.000-fache Effizienz • Fraktale Governance als direkter Entscheidungstrigger</p>
 
-    <!-- Countdown -->
-    <div class="card">
+    <!-- Embeddable Widget -->
+    <div class="widget" id="widget">
+      <h2>Live Decision-Engine Widget</h2>
+      <div id="current-r" class="status">R(n) wird geladen...</div>
+      <div id="decision" style="margin:15px 0; font-size:1.4em;"></div>
+      <div id="honey" style="color:#ffd700; font-size:1.1em;"></div>
+      <a href="https://rosary-mom.github.io/Rosenkranz-Rat/" class="button" style="background:#00ff9d;color:#000;">
+        Early-Bird Claim &amp; Token starten
+      </a>
+    </div>
+
+    <!-- Rest der Token-Seite -->
+    <div class="card" style="background:#112233;border:3px solid #ffd700;border-radius:16px;padding:40px;margin:30px auto;max-width:1000px;">
       <h2>Countdown bis Launch</h2>
       <div id="countdown" class="countdown">00 : 00 : 00 : 00</div>
       <p style="font-size:1.1em;color:#aaa;">26. März 2026 • 12:00 Uhr CET</p>
     </div>
 
-    <!-- Blockchain Details -->
-    <div class="card">
+    <div class="card" style="background:#112233;border:3px solid #ffd700;border-radius:16px;padding:40px;margin:30px auto;max-width:1000px;">
       <h2>Blockchain Details</h2>
       <p><strong>Netzwerk:</strong> Ethereum Sepolia Testnet<br>
       <strong>Contract:</strong> EnergySpiralGovernor<br>
       <strong>Adresse:</strong> 0xd9145CCE52D386f254917e481eB44e9943F39138<br>
       <strong>Erster Spiral-Trigger Tx-Hash:</strong><br>
-      <span style="color:#00ff9d;">0x29df4931e6562d3c6153545754a5368d5378488c121ac6e793ee1fde1a725560</span></p>
+      0x29df4931e6562d3c6153545754a5368d5378488c121ac6e793ee1fde1a725560</p>
     </div>
-
-    <!-- Fraktale Governance Dashboards -->
-    <div class="card">
-      <h2>📊 Fraktale Governance Dashboards – R(n) als direkter Entscheidungstrigger</h2>
-      <img src="Fraktale Governance, Gemini mit COLAB notebook 2.png" alt="R(n) = 1.0 Golden Window">
-      <img src="Fraktale Governance, Gemini mit COLAB notebook 3.png" alt="Oszillierendes R(n)">
-      <img src="Fraktale Governance, Gemini mit COLAB notebook 1.png" alt="Aufsteigendes R(n)">
-      <img src="Fraktale Governance, Gemini mit COLAB notebook 4.png" alt="Log-Spirale c_gov">
-      <p><strong>Regel:</strong> R(n) ≥ 0.85 = <span style="color:#00ff9d;">Golden Window</span> → sofortige Entscheidung ohne spiralförmige Redundanz</p>
-    </div>
-
-    <!-- TACO-Analogie + Honigschlecken -->
-    <div class="card">
-      <h2>🎯 TACO-Analogie → Fraktale Resilienz</h2>
-      <p>TACO nutzt 2 Standardabweichungen für große Entscheidungen (Krieg/Frieden, Taxes, Deals).<br>
-      Unsere fraktale Resilienz R(n) ist präziser: Bei R(n) ≥ 0.85 wird der <strong>missing parameter</strong> sofort geliefert.</p>
-      <p><strong>Honigschlecken-Mechanismus:</strong> Jede Golden-Window-Entscheidung mintet ESG-Spiral-Tokens → sofort handelbare Liquidität.<br>
-      Reichtum, Glück und Harmony entstehen durch harmonische, resiliente Entscheidungen (R → 1).</p>
-    </div>
-
-    <!-- Claim Button -->
-    <a href="#" class="button" style="background:#00ff9d;color:#000;">
-      Early-Bird Claim &amp; Token Launch vorbereiten
-    </a>
 
     <p style="margin-top:40px;color:#ffd700;">
       Rosary©®™ TechEd for StartUp – Dehydrogenase als Biomarker des Goldenen Zeitalters
@@ -68,6 +56,21 @@
   </div>
 
   <script>
+    // === Embeddable Widget Logik (R(n) aus Dashboard) ===
+    const currentR = 0.92; // Hier später echtes Dashboard einbinden (z. B. via API)
+    const threshold = 0.85;
+
+    if (currentR >= threshold) {
+      document.getElementById("current-r").innerHTML = `R(n) = ${currentR.toFixed(4)} <span class="golden">GOLDEN WINDOW</span>`;
+      document.getElementById("decision").innerHTML = "✅ Direkte Entscheidung möglich – missing parameter sofort verfügbar!";
+      document.getElementById("honey").innerHTML = `Honigschlecken-Potenzial: ${(currentR * 30000).toFixed(0)} ESG-Tokens → sofortige Liquidität`;
+    } else {
+      document.getElementById("current-r").innerHTML = `R(n) = ${currentR.toFixed(4)} <span class="redundanz">Redundanz-Modus</span>`;
+      document.getElementById("decision").innerHTML = "⏳ Spirale dreht weiter – nächster Lauf schneller";
+      document.getElementById("honey").innerHTML = "Kein Mint – Resilienz wird gespeichert";
+    }
+
+    // Countdown
     const launchDate = new Date("2026-03-26T12:00:00+01:00").getTime();
     function updateCountdown() {
       const now = new Date().getTime();
