@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rosary©®™ ESG-Spiral-Tokens Launch</title>
+  <style>
+    body { font-family: system-ui; background:#0a1625; color:#f0f0f0; margin:0; padding:40px; line-height:1.6; text-align:center; }
+    .container { max-width:1100px; margin:auto; }
+    h1 { color:#ffd700; font-size:2.8em; }
+    .subtitle { color:#aaa; font-size:1.3em; margin-bottom:30px; }
+    .card { background:#112233; border:3px solid #ffd700; border-radius:16px; padding:40px; margin:30px auto; max-width:1000px; }
+    .button { display:inline-block; margin:30px 10px; background:#ffd700; color:#000; padding:25px 60px; font-weight:bold; font-size:1.6em; border-radius:12px; text-decoration:none; box-shadow:0 0 30px rgba(255,215,0,0.8); transition:all 0.3s; }
+    .button:hover { background:#ffed9e; transform:scale(1.05); }
+    .countdown { font-size:2.6em; font-weight:bold; color:#ffd700; letter-spacing:8px; margin:20px 0; }
+    img { width:100%; border:2px solid #ffd700; border-radius:12px; margin:15px 0; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 Rosary©®™ ESG-Spiral-Tokens Launch</h1>
+    <p class="subtitle">Dehydrogenase + 30.000-fache Effizienz • Fraktale Governance als direkter Entscheidungstrigger</p>
+
+    <!-- Countdown -->
+    <div class="card">
+      <h2>Countdown bis Launch</h2>
+      <div id="countdown" class="countdown">00 : 00 : 00 : 00</div>
+      <p style="font-size:1.1em;color:#aaa;">26. März 2026 • 12:00 Uhr CET</p>
+    </div>
+
+    <!-- Blockchain Details -->
+    <div class="card">
+      <h2>Blockchain Details</h2>
+      <p><strong>Netzwerk:</strong> Ethereum Sepolia Testnet<br>
+      <strong>Contract:</strong> EnergySpiralGovernor<br>
+      <strong>Adresse:</strong> 0xd9145CCE52D386f254917e481eB44e9943F39138<br>
+      <strong>Erster Spiral-Trigger Tx-Hash:</strong><br>
+      <span style="color:#00ff9d;">0x29df4931e6562d3c6153545754a5368d5378488c121ac6e793ee1fde1a725560</span></p>
+    </div>
+
+    <!-- Fraktale Governance Dashboards -->
+    <div class="card">
+      <h2>📊 Fraktale Governance Dashboards – R(n) als direkter Entscheidungstrigger</h2>
+      <img src="Fraktale Governance, Gemini mit COLAB notebook 2.png" alt="R(n) = 1.0 Golden Window">
+      <img src="Fraktale Governance, Gemini mit COLAB notebook 3.png" alt="Oszillierendes R(n)">
+      <img src="Fraktale Governance, Gemini mit COLAB notebook 1.png" alt="Aufsteigendes R(n)">
+      <img src="Fraktale Governance, Gemini mit COLAB notebook 4.png" alt="Log-Spirale c_gov">
+      <p><strong>Regel:</strong> R(n) ≥ 0.85 = <span style="color:#00ff9d;">Golden Window</span> → sofortige Entscheidung ohne spiralförmige Redundanz</p>
+    </div>
+
+    <!-- TACO-Analogie + Honigschlecken -->
+    <div class="card">
+      <h2>🎯 TACO-Analogie → Fraktale Resilienz</h2>
+      <p>TACO nutzt 2 Standardabweichungen für große Entscheidungen (Krieg/Frieden, Taxes, Deals).<br>
+      Unsere fraktale Resilienz R(n) ist präziser: Bei R(n) ≥ 0.85 wird der <strong>missing parameter</strong> sofort geliefert.</p>
+      <p><strong>Honigschlecken-Mechanismus:</strong> Jede Golden-Window-Entscheidung mintet ESG-Spiral-Tokens → sofort handelbare Liquidität.<br>
+      Reichtum, Glück und Harmony entstehen durch harmonische, resiliente Entscheidungen (R → 1).</p>
+    </div>
+
+    <!-- Claim Button -->
+    <a href="#" class="button" style="background:#00ff9d;color:#000;">
+      Early-Bird Claim &amp; Token Launch vorbereiten
+    </a>
+
+    <p style="margin-top:40px;color:#ffd700;">
+      Rosary©®™ TechEd for StartUp – Dehydrogenase als Biomarker des Goldenen Zeitalters
+    </p>
+  </div>
+
+  <script>
+    const launchDate = new Date("2026-03-26T12:00:00+01:00").getTime();
+    function updateCountdown() {
+      const now = new Date().getTime();
+      const distance = launchDate - now;
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+      document.getElementById("countdown").innerHTML = `${days}d ${hours.toString().padStart(2,'0')}h ${minutes.toString().padStart(2,'0')}m ${seconds.toString().padStart(2,'0')}s`;
+      if (distance < 0) document.getElementById("countdown").innerHTML = "🚀 LAUNCH JETZT!";
+    }
+    setInterval(updateCountdown, 1000);
+    updateCountdown();
+  </script>
+</body>
+</html>
