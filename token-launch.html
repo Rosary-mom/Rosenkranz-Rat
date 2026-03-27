@@ -14,7 +14,6 @@
     .button:hover { background:#ffed9e; transform:scale(1.05); }
     .status { font-size:1.3em; font-weight:bold; padding:10px 20px; border-radius:8px; display:inline-block; }
     .golden { background:#00ff9d; color:#000; }
-    .redundanz { background:#ffaa00; color:#000; }
     .dashboard-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:15px; margin-top:20px; }
     img { width:100%; border:2px solid #ffd700; border-radius:12px; }
   </style>
@@ -24,14 +23,14 @@
     <h1>🚀 Rosary©®™ ESG-Spiral-Tokens Launch</h1>
     <p style="font-size:1.3em;color:#ffd700;">Dehydrogenase + 30.000-fache Effizienz • Fraktale Governance als direkter Entscheidungstrigger</p>
 
-    <!-- Live Widget mit Decision-Engine + 4 Modelle -->
+    <!-- Live Widget mit neuem Mint -->
     <div class="widget">
-      <h2>Live Decision-Engine Widget (R(n) → Honigschlecken)</h2>
-      <div id="current-r" class="status">R(n) wird geladen...</div>
-      <div id="decision" style="margin:15px 0; font-size:1.4em;"></div>
-      <div id="honey" style="color:#ffd700; font-size:1.1em;"></div>
+      <h2>Live Decision-Engine Widget – ERFOLGREICH GEMINTET!</h2>
+      <div class="status golden">R(n) = 0.92 → GOLDEN WINDOW AKTIV</div>
+      <p style="font-size:1.4em;margin:15px 0;">✅ 27.600 ESG-Spiral-Tokens wurden gemintet!</p>
+      <p><strong>Tx-Hash:</strong> 0xeacf6c94c880120820f35576b64b069fef4ffd56098882a2f0d9fc721382ea69</p>
+      <p><strong>Block:</strong> 10.532.139</p>
 
-      <!-- Die 4 Modelle (deine Dashboards) -->
       <div class="dashboard-grid">
         <img src="Fraktale Governance, Gemini mit COLAB notebook 1.png" alt="Modell 1">
         <img src="Fraktale Governance, Gemini mit COLAB notebook 2.png" alt="Modell 2">
@@ -40,11 +39,11 @@
       </div>
 
       <a href="https://rosary-mom.github.io/Rosenkranz-Rat/" class="button" style="background:#00ff9d;color:#000;">
-        Early-Bird Claim &amp; Token starten
+        Early-Bird Claimen &amp; Token starten
       </a>
     </div>
 
-    <!-- Rest der Seite -->
+    <!-- Countdown -->
     <div class="card" style="background:#112233;border:3px solid #ffd700;border-radius:16px;padding:40px;margin:30px auto;max-width:1000px;">
       <h2>Countdown bis Launch</h2>
       <div id="countdown" class="countdown">00 : 00 : 00 : 00</div>
@@ -52,26 +51,12 @@
     </div>
 
     <p style="margin-top:40px;color:#ffd700;">
-      Rosary©®™ TechEd for StartUp – Dehydrogenase als Biomarker des Goldenen Zeitalters
+      Rosary©®™ TechEd for StartUp – Dehydrogenase als Biomarker des Goldenen Zeitalters<br>
+      <strong>Erster Mint erfolgreich: 27.600 ESG-Spiral-Tokens on-chain!</strong>
     </p>
   </div>
 
   <script>
-    // Live Decision-Engine Widget
-    const currentR = 0.92; // Hier später echtes Dashboard einbinden
-    const threshold = 0.85;
-
-    if (currentR >= threshold) {
-      document.getElementById("current-r").innerHTML = `R(n) = ${currentR.toFixed(4)} <span class="golden">GOLDEN WINDOW</span>`;
-      document.getElementById("decision").innerHTML = "✅ Direkte Entscheidung möglich – missing parameter sofort verfügbar!";
-      document.getElementById("honey").innerHTML = `Honigschlecken-Potenzial: ${(currentR * 30000).toFixed(0)} ESG-Tokens → sofortige Liquidität`;
-    } else {
-      document.getElementById("current-r").innerHTML = `R(n) = ${currentR.toFixed(4)} <span class="redundanz">Redundanz-Modus</span>`;
-      document.getElementById("decision").innerHTML = "⏳ Spirale dreht weiter – nächster Lauf schneller";
-      document.getElementById("honey").innerHTML = "Kein Mint – Resilienz wird gespeichert";
-    }
-
-    // Countdown
     const launchDate = new Date("2026-03-26T12:00:00+01:00").getTime();
     function updateCountdown() {
       const now = new Date().getTime();
